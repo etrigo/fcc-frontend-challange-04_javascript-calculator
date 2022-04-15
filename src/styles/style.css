@@ -1,7 +1,110 @@
+@import 'https://fonts.googleapis.com/css?family=Share+Tech+Mono';
+@font-face {
+  font-family: 'Digital';
+  src: url('//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot');
+  src: url('//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot?#iefix')
+      format('embedded-opentype'),
+    url('//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff2')
+      format('woff2'),
+    url('//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff')
+      format('woff'),
+    url('//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.ttf')
+      format('truetype'),
+    url('//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.svg#Digital-7')
+      format('svg');
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+#calculator {
+  margin-top: 100px;
+  height: 390px;
+  width: 334px;
+  border: 2px solid #47476b;
+  padding: 5px;
+  background-color: #000;
+}
+
+.formula-screen {
+  min-height: 20px;
+  color: orange;
+  font-family: Digital;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 20px;
+  line-height: 20px;
+  word-wrap: break-word;
+}
+
+.output-screen {
+  font-family: Digital;
+  font-size: 29px;
+  color: #FFF;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.buttons-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: Share Tech Mono;
+  height: 65px;
+  width: 80px;
+  border: 1px solid #000;
+  background-color: #4d4d4d;
+  font-size: 20px;
+  cursor: pointer;
+  overflow: hidden;
+  /* box-sizing: border-box; */
+  transition: all 0.2s ease-in;
+}
+
+.btn:hover {
+  border: 1px solid #797979; 
+  font-size: 28px;
+  font-weight: bold;
+  /* color: #000; */
+  z-index: 3;
+  transition: all 0.2s ease-in;
+}
+
+#clear {
+  background: rgb(172, 57, 57);
+  width: 160px;
+  grid-column: 1 / span 2;
+}
+
+#zero {
+  width: 160px;
+  grid-column: 1 / span 2;
+  grid-row: 5;
+}
+
+#equals {
+  height: 130px;
+  grid-row: 4 / span 5;
+  grid-column: 4;
+  background: rgb(0, 68, 102);
+  z-index: 2;
+}
+
+#divide, #multiply, #subtract, #add {
+  background: rgb(102, 102, 102);
 }
